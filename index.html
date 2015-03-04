@@ -1,36 +1,32 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-
   <head>
-    <meta charset='utf-8'>
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="description" content="Kindeditor : ">
+    <title>Kindeditor by pjkui</title>
 
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
-    <title>Kindeditor</title>
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
   </head>
-
   <body>
-
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/pjkui/kindeditor">View on GitHub</a>
-
-          <h1 id="project_title">Kindeditor</h1>
-          <h2 id="project_tagline"></h2>
-
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/pjkui/kindeditor/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/pjkui/kindeditor/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
-    </div>
-
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
+    <div class="wrapper">
+      <header class="without-description">
+        <h1>Kindeditor</h1>
+        <p></p>
+        <p class="view"><a href="https://github.com/pjkui/kindeditor">View the Project on GitHub <small>pjkui/kindeditor</small></a></p>
+        <ul>
+          <li><a href="https://github.com/pjkui/kindeditor/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/pjkui/kindeditor/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/pjkui/kindeditor">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
         <h1>
 <a id="kindeditor" class="anchor" href="#kindeditor" aria-hidden="true"><span class="octicon octicon-link"></span></a>KindEditor</h1>
 
@@ -93,30 +89,42 @@
 
 <ol>
 <li>
-<code>editor</code> work as editor，default configure./配置为富文本编辑器，默认配置
-usage:<code>&lt;?= $form-&gt;field($model, 'content')-&gt;widget('pjkui\kindeditor\Kindeditor',['clientOptions'=&gt;['allowFileManager'=&gt;'true','allowUpload'=&gt;'true']]) ?&gt;</code>
+<p><code>editor</code> work as editor，default configure./配置为富文本编辑器，默认配置</p>
+
+<p>usage:<code>&lt;?= $form-&gt;field($model, 'content')-&gt;widget('pjkui\kindeditor\Kindeditor',['clientOptions'=&gt;['allowFileManager'=&gt;'true','allowUpload'=&gt;'true']]) ?&gt;</code></p>
 </li>
-<li>
-<code>uploadButton</code>Kindediotr work as a upload file button ,can upload file/picture to the server automatic /这时候配置kindeditor为上传文件按钮，可以自动上传文件到服务器
-usage:<code>&lt;?= $form-&gt;field($model, 'article_pic')-&gt;widget('pjkui\kindeditor\Kindeditor',['clientOptions'=&gt;['allowFileManager'=&gt;'true','allowUpload'=&gt;'true'],'editorType'=&gt;'uploadButton]) ?&gt;</code>
-</li>
-<li>
-<code>colorpicker</code>kindeditor work as color picker / 配置kindeditor为取色器
-usage:<code>&lt;?= $form-&gt;field($model, 'content')-&gt;widget('pjkui\kindeditor\Kindeditor','editorType'=&gt;'colorpicker']) ?&gt;</code>
-</li>
-<li>
-<code>file-manager</code>kindeditor work as file manager,can view and select the file which uploaded by it . / 配置kindeditor为文件管理器，可以查看和选着其上传的文件。
-usage:<code>&lt;?= $form-&gt;field($model, 'article_pic')-&gt;widget('pjkui\kindeditor\Kindeditor',['clientOptions'=&gt;['allowFileManager'=&gt;'true','allowUpload'=&gt;'true'],'editorType'=&gt;'file-manager']) ?&gt;</code>
-</li>
-<li>
-<code>image-dialog</code>kindeditor work as image upload dialog. / 配置kindeditor为图片上传对话框。
-usage:<code>&lt;?= $form-&gt;field($model, 'article_pic')-&gt;widget('pjkui\kindeditor\Kindeditor',['clientOptions'=&gt;['allowFileManager'=&gt;'true','allowUpload'=&gt;'true'],'editorType'=&gt;'image-dialog']) ?&gt;</code>
-</li>
-<li>
-<code>file-dialog</code>kindeditor work as file upload dialog. / 配置kindeditor为文件上传对话框。
-usage:<code>&lt;?= $form-&gt;field($model, 'article_pic')-&gt;widget('pjkui\kindeditor\Kindeditor',['clientOptions'=&gt;['allowFileManager'=&gt;'true','allowUpload'=&gt;'true'],'editorType'=&gt;'file-dialog']) ?&gt;</code>
-</li>
+<li><p><code>uploadButton</code>Kindediotr work as a upload file button ,can upload file/picture to the server automatic /这时候配置kindeditor为上传文件按钮，可以自动上传文件到服务器</p></li>
 </ol>
+
+<p>usage:<code>&lt;?= $form-&gt;field($model, 'article_pic')-&gt;widget('pjkui\kindeditor\Kindeditor',['clientOptions'=&gt;['allowFileManager'=&gt;'true','allowUpload'=&gt;'true'],'editorType'=&gt;'uploadButton]) ?&gt;</code></p>
+
+<ol>
+<li>
+<code>colorpicker</code>kindeditor work as color picker / 配置kindeditor为取色器</li>
+</ol>
+
+<p>usage:<code>&lt;?= $form-&gt;field($model, 'content')-&gt;widget('pjkui\kindeditor\Kindeditor','editorType'=&gt;'colorpicker']) ?&gt;</code></p>
+
+<ol>
+<li>
+<code>file-manager</code>kindeditor work as file manager,can view and select the file which uploaded by it . / 配置kindeditor为文件管理器，可以查看和选着其上传的文件。</li>
+</ol>
+
+<p>usage:<code>&lt;?= $form-&gt;field($model, 'article_pic')-&gt;widget('pjkui\kindeditor\Kindeditor',['clientOptions'=&gt;['allowFileManager'=&gt;'true','allowUpload'=&gt;'true'],'editorType'=&gt;'file-manager']) ?&gt;</code></p>
+
+<ol>
+<li>
+<code>image-dialog</code>kindeditor work as image upload dialog. / 配置kindeditor为图片上传对话框。</li>
+</ol>
+
+<p>usage:<code>&lt;?= $form-&gt;field($model, 'article_pic')-&gt;widget('pjkui\kindeditor\Kindeditor',['clientOptions'=&gt;['allowFileManager'=&gt;'true','allowUpload'=&gt;'true'],'editorType'=&gt;'image-dialog']) ?&gt;</code></p>
+
+<ol>
+<li>
+<code>file-dialog</code>kindeditor work as file upload dialog. / 配置kindeditor为文件上传对话框。</li>
+</ol>
+
+<p>usage:<code>&lt;?= $form-&gt;field($model, 'article_pic')-&gt;widget('pjkui\kindeditor\Kindeditor',['clientOptions'=&gt;['allowFileManager'=&gt;'true','allowUpload'=&gt;'true'],'editorType'=&gt;'file-dialog']) ?&gt;</code></p>
 
 <p>简单实例:  </p>
 
@@ -139,16 +147,11 @@ usage:<code>&lt;?= $form-&gt;field($model, 'article_pic')-&gt;widget('pjkui\kind
 <span class="pl-s2">]);</span></pre></div>
       </section>
     </div>
-
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">Kindeditor maintained by <a href="https://github.com/pjkui">pjkui</a></p>
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
-      </footer>
-    </div>
-
+    <footer>
+      <p>Project maintained by <a href="https://github.com/pjkui">pjkui</a></p>
+      <p>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></p>
+    </footer>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
     
-
   </body>
 </html>
