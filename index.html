@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="Kindeditor : ">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Kindeditor</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/pjkui/kindeditor">View on GitHub</a>
+
+          <h1 id="project_title">Kindeditor</h1>
+          <h2 id="project_tagline"></h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/pjkui/kindeditor/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/pjkui/kindeditor/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a id="kindeditor" class="anchor" href="#kindeditor" aria-hidden="true"><span class="octicon octicon-link"></span></a>KindEditor</h1>
+
+<h3>
+<a id="install--安装" class="anchor" href="#install--%E5%AE%89%E8%A3%85" aria-hidden="true"><span class="octicon octicon-link"></span></a>install / 安装</h3>
+
+<p>Either run</p>
+
+<pre><code>$ php composer.phar require pjkui/kindeditor "*"
+</code></pre>
+
+<p>or add</p>
+
+<pre><code>"pjkui/kindeditor": "*"
+</code></pre>
+
+<p>to the <code>require</code> section of your <code>composer.json</code> file.</p>
+
+<h3>
+<a id="usage-example--应用方法" class="anchor" href="#usage-example--%E5%BA%94%E7%94%A8%E6%96%B9%E6%B3%95" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage example / 应用方法</h3>
+
+<h4>
+<a id="controller--控制器" class="anchor" href="#controller--%E6%8E%A7%E5%88%B6%E5%99%A8" aria-hidden="true"><span class="octicon octicon-link"></span></a>controller / 控制器:</h4>
+
+<pre><code>public function actions()
+{
+    return [
+        'Kupload' =&gt; [
+            'class' =&gt; 'pjkui\kindeditor\KindEditorAction',
+        ]
+    ];
+}
+</code></pre>
+
+<h4>
+<a id="view--视图" class="anchor" href="#view--%E8%A7%86%E5%9B%BE" aria-hidden="true"><span class="octicon octicon-link"></span></a>view / 视图:</h4>
+
+<pre><code>echo \pjkui\kindeditor\KindEditor::widget([]);
+</code></pre>
+
+<p>or / 或者：</p>
+
+<pre><code>echo $form-&gt;field($model,'colum')-&gt;widget('pjkui\kindeditor\KindEditor',[]);
+</code></pre>
+
+<p>or / 或者：</p>
+
+<pre><code>&lt;?= $form-&gt;field($model, 'content')-&gt;widget('pjkui\kindeditor\Kindeditor',['clientOptions'=&gt;['allowFileManager'=&gt;'true','allowUpload'=&gt;'true']]) ?&gt;
+</code></pre>
+
+<h2>
+<a id="configure--配置相关" class="anchor" href="#configure--%E9%85%8D%E7%BD%AE%E7%9B%B8%E5%85%B3" aria-hidden="true"><span class="octicon octicon-link"></span></a>configure / 配置相关</h2>
+
+<h5>
+<a id="you-can-configure-clientoption-and-editortype-to-change-the-kindeditors-preference-the-detail-configure-see-the-official-websitekindeditor-website--编辑器相关配置请在view-中配置参数为clientoptions比如定制菜单编辑器大小等等具体参数请查看kindeditor官网文档" class="anchor" href="#you-can-configure-clientoption-and-editortype-to-change-the-kindeditors-preference-the-detail-configure-see-the-official-websitekindeditor-website--%E7%BC%96%E8%BE%91%E5%99%A8%E7%9B%B8%E5%85%B3%E9%85%8D%E7%BD%AE%E8%AF%B7%E5%9C%A8view-%E4%B8%AD%E9%85%8D%E7%BD%AE%E5%8F%82%E6%95%B0%E4%B8%BAclientoptions%E6%AF%94%E5%A6%82%E5%AE%9A%E5%88%B6%E8%8F%9C%E5%8D%95%E7%BC%96%E8%BE%91%E5%99%A8%E5%A4%A7%E5%B0%8F%E7%AD%89%E7%AD%89%E5%85%B7%E4%BD%93%E5%8F%82%E6%95%B0%E8%AF%B7%E6%9F%A5%E7%9C%8Bkindeditor%E5%AE%98%E7%BD%91%E6%96%87%E6%A1%A3" aria-hidden="true"><span class="octicon octicon-link"></span></a>you can configure <code>clientOption</code> and <code>editorType</code> to change the kindeditor's preference, the detail configure see the official website<a href="http://kindeditor.net/doc.php">KindEditor website</a>. / 编辑器相关配置，请在<code>view</code> 中配置，参数为<code>clientOptions</code>，比如定制菜单，编辑器大小等等，具体参数请查看<a href="http://kindeditor.net/doc.php">KindEditor官网文档</a>。</h5>
+
+<h6>
+<a id="editortype-configure--editortype配置" class="anchor" href="#editortype-configure--editortype%E9%85%8D%E7%BD%AE" aria-hidden="true"><span class="octicon octicon-link"></span></a>
+<code>editorType</code> configure / <code>editorType</code>配置</h6>
+
+<ol>
+<li>
+<code>editor</code> work as editor，default configure./配置为富文本编辑器，默认配置
+usage:<code>&lt;?= $form-&gt;field($model, 'content')-&gt;widget('pjkui\kindeditor\Kindeditor',['clientOptions'=&gt;['allowFileManager'=&gt;'true','allowUpload'=&gt;'true']]) ?&gt;</code>
+</li>
+<li>
+<code>uploadButton</code>Kindediotr work as a upload file button ,can upload file/picture to the server automatic /这时候配置kindeditor为上传文件按钮，可以自动上传文件到服务器
+usage:<code>&lt;?= $form-&gt;field($model, 'article_pic')-&gt;widget('pjkui\kindeditor\Kindeditor',['clientOptions'=&gt;['allowFileManager'=&gt;'true','allowUpload'=&gt;'true'],'editorType'=&gt;'uploadButton]) ?&gt;</code>
+</li>
+<li>
+<code>colorpicker</code>kindeditor work as color picker / 配置kindeditor为取色器
+usage:<code>&lt;?= $form-&gt;field($model, 'content')-&gt;widget('pjkui\kindeditor\Kindeditor','editorType'=&gt;'colorpicker']) ?&gt;</code>
+</li>
+<li>
+<code>file-manager</code>kindeditor work as file manager,can view and select the file which uploaded by it . / 配置kindeditor为文件管理器，可以查看和选着其上传的文件。
+usage:<code>&lt;?= $form-&gt;field($model, 'article_pic')-&gt;widget('pjkui\kindeditor\Kindeditor',['clientOptions'=&gt;['allowFileManager'=&gt;'true','allowUpload'=&gt;'true'],'editorType'=&gt;'file-manager']) ?&gt;</code>
+</li>
+<li>
+<code>image-dialog</code>kindeditor work as image upload dialog. / 配置kindeditor为图片上传对话框。
+usage:<code>&lt;?= $form-&gt;field($model, 'article_pic')-&gt;widget('pjkui\kindeditor\Kindeditor',['clientOptions'=&gt;['allowFileManager'=&gt;'true','allowUpload'=&gt;'true'],'editorType'=&gt;'image-dialog']) ?&gt;</code>
+</li>
+<li>
+<code>file-dialog</code>kindeditor work as file upload dialog. / 配置kindeditor为文件上传对话框。
+usage:<code>&lt;?= $form-&gt;field($model, 'article_pic')-&gt;widget('pjkui\kindeditor\Kindeditor',['clientOptions'=&gt;['allowFileManager'=&gt;'true','allowUpload'=&gt;'true'],'editorType'=&gt;'file-dialog']) ?&gt;</code>
+</li>
+</ol>
+
+<p>简单实例:  </p>
+
+<div class="highlight highlight-php"><pre><span class="pl-s2"><span class="pl-k">use</span> <span class="pl-s3">\pjkui\kindeditor\KindEditor</span>;</span>
+<span class="pl-s2"><span class="pl-s3">echo</span> <span class="pl-s3">KindEditor</span><span class="pl-k">::</span>widget([</span>
+<span class="pl-s2">    <span class="pl-s1"><span class="pl-pds">'</span>clientOptions<span class="pl-pds">'</span></span> <span class="pl-k">=&gt;</span> [</span>
+<span class="pl-s2">        <span class="pl-c">//编辑区域大小</span></span>
+<span class="pl-s2">        <span class="pl-s1"><span class="pl-pds">'</span>height<span class="pl-pds">'</span></span> <span class="pl-k">=&gt;</span> <span class="pl-s1"><span class="pl-pds">'</span>500<span class="pl-pds">'</span></span>,</span>
+<span class="pl-s2">        <span class="pl-c">//定制菜单</span></span>
+<span class="pl-s2">        <span class="pl-s1"><span class="pl-pds">'</span>items<span class="pl-pds">'</span></span> <span class="pl-k">=&gt;</span> [</span>
+<span class="pl-s2">        <span class="pl-s1"><span class="pl-pds">'</span>source<span class="pl-pds">'</span></span>, <span class="pl-s1"><span class="pl-pds">'</span>|<span class="pl-pds">'</span></span>, <span class="pl-s1"><span class="pl-pds">'</span>undo<span class="pl-pds">'</span></span>, <span class="pl-s1"><span class="pl-pds">'</span>redo<span class="pl-pds">'</span></span>, <span class="pl-s1"><span class="pl-pds">'</span>|<span class="pl-pds">'</span></span>, <span class="pl-s1"><span class="pl-pds">'</span>preview<span class="pl-pds">'</span></span>, <span class="pl-s1"><span class="pl-pds">'</span>print<span class="pl-pds">'</span></span>, <span class="pl-s1"><span class="pl-pds">'</span>template<span class="pl-pds">'</span></span>, <span class="pl-s1"><span class="pl-pds">'</span>code<span class="pl-pds">'</span></span>, <span class="pl-s1"><span class="pl-pds">'</span>cut<span class="pl-pds">'</span></span>, <span class="pl-s1"><span class="pl-pds">'</span>copy<span class="pl-pds">'</span></span>, <span class="pl-s1"><span class="pl-pds">'</span>paste<span class="pl-pds">'</span></span>,</span>
+<span class="pl-s2">        <span class="pl-s1"><span class="pl-pds">'</span>plainpaste<span class="pl-pds">'</span></span>, <span class="pl-s1"><span class="pl-pds">'</span>wordpaste<span class="pl-pds">'</span></span>, <span class="pl-s1"><span class="pl-pds">'</span>|<span class="pl-pds">'</span></span>, <span class="pl-s1"><span class="pl-pds">'</span>justifyleft<span class="pl-pds">'</span></span>, <span class="pl-s1"><span class="pl-pds">'</span>justifycenter<span class="pl-pds">'</span></span>, <span class="pl-s1"><span class="pl-pds">'</span>justifyright<span class="pl-pds">'</span></span>,</span>
+<span class="pl-s2">        <span class="pl-s1"><span class="pl-pds">'</span>justifyfull<span class="pl-pds">'</span></span>, <span class="pl-s1"><span class="pl-pds">'</span>insertorderedlist<span class="pl-pds">'</span></span>, <span class="pl-s1"><span class="pl-pds">'</span>insertunorderedlist<span class="pl-pds">'</span></span>, <span class="pl-s1"><span class="pl-pds">'</span>indent<span class="pl-pds">'</span></span>, <span class="pl-s1"><span class="pl-pds">'</span>outdent<span class="pl-pds">'</span></span>, <span class="pl-s1"><span class="pl-pds">'</span>subscript<span class="pl-pds">'</span></span>,</span>
+<span class="pl-s2">        <span class="pl-s1"><span class="pl-pds">'</span>superscript<span class="pl-pds">'</span></span>, <span class="pl-s1"><span class="pl-pds">'</span>clearhtml<span class="pl-pds">'</span></span>, <span class="pl-s1"><span class="pl-pds">'</span>quickformat<span class="pl-pds">'</span></span>, <span class="pl-s1"><span class="pl-pds">'</span>selectall<span class="pl-pds">'</span></span>, <span class="pl-s1"><span class="pl-pds">'</span>|<span class="pl-pds">'</span></span>, <span class="pl-s1"><span class="pl-pds">'</span>fullscreen<span class="pl-pds">'</span></span>, <span class="pl-s1"><span class="pl-pds">'</span>/<span class="pl-pds">'</span></span>,</span>
+<span class="pl-s2">        <span class="pl-s1"><span class="pl-pds">'</span>formatblock<span class="pl-pds">'</span></span>, <span class="pl-s1"><span class="pl-pds">'</span>fontname<span class="pl-pds">'</span></span>, <span class="pl-s1"><span class="pl-pds">'</span>fontsize<span class="pl-pds">'</span></span>, <span class="pl-s1"><span class="pl-pds">'</span>|<span class="pl-pds">'</span></span>, <span class="pl-s1"><span class="pl-pds">'</span>forecolor<span class="pl-pds">'</span></span>, <span class="pl-s1"><span class="pl-pds">'</span>hilitecolor<span class="pl-pds">'</span></span>, <span class="pl-s1"><span class="pl-pds">'</span>bold<span class="pl-pds">'</span></span>,</span>
+<span class="pl-s2">        <span class="pl-s1"><span class="pl-pds">'</span>italic<span class="pl-pds">'</span></span>, <span class="pl-s1"><span class="pl-pds">'</span>underline<span class="pl-pds">'</span></span>, <span class="pl-s1"><span class="pl-pds">'</span>strikethrough<span class="pl-pds">'</span></span>, <span class="pl-s1"><span class="pl-pds">'</span>lineheight<span class="pl-pds">'</span></span>, <span class="pl-s1"><span class="pl-pds">'</span>removeformat<span class="pl-pds">'</span></span>, <span class="pl-s1"><span class="pl-pds">'</span>|<span class="pl-pds">'</span></span>, <span class="pl-s1"><span class="pl-pds">'</span>image<span class="pl-pds">'</span></span>, <span class="pl-s1"><span class="pl-pds">'</span>multiimage<span class="pl-pds">'</span></span>,</span>
+<span class="pl-s2">        <span class="pl-s1"><span class="pl-pds">'</span>flash<span class="pl-pds">'</span></span>, <span class="pl-s1"><span class="pl-pds">'</span>media<span class="pl-pds">'</span></span>, <span class="pl-s1"><span class="pl-pds">'</span>insertfile<span class="pl-pds">'</span></span>, <span class="pl-s1"><span class="pl-pds">'</span>table<span class="pl-pds">'</span></span>, <span class="pl-s1"><span class="pl-pds">'</span>hr<span class="pl-pds">'</span></span>, <span class="pl-s1"><span class="pl-pds">'</span>emoticons<span class="pl-pds">'</span></span>, <span class="pl-s1"><span class="pl-pds">'</span>baidumap<span class="pl-pds">'</span></span>, <span class="pl-s1"><span class="pl-pds">'</span>pagebreak<span class="pl-pds">'</span></span>,</span>
+<span class="pl-s2">        <span class="pl-s1"><span class="pl-pds">'</span>anchor<span class="pl-pds">'</span></span>, <span class="pl-s1"><span class="pl-pds">'</span>link<span class="pl-pds">'</span></span>, <span class="pl-s1"><span class="pl-pds">'</span>unlink<span class="pl-pds">'</span></span>, <span class="pl-s1"><span class="pl-pds">'</span>|<span class="pl-pds">'</span></span>, <span class="pl-s1"><span class="pl-pds">'</span>about<span class="pl-pds">'</span></span></span>
+<span class="pl-s2">        ]</span>
+<span class="pl-s2">]);</span></pre></div>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Kindeditor maintained by <a href="https://github.com/pjkui">pjkui</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
