@@ -53,7 +53,7 @@ or / 或者：
 
 ## configure / 配置相关
 
-##### you can configure ```clientOption``` and ```editorType``` to change the kindeditor's preference, the detail configure see the official website[KindEditor website](http://kindeditor.net/doc.php). / 编辑器相关配置，请在`view` 中配置，参数为`clientOptions`，比如定制菜单，编辑器大小等等，具体参数请查看[KindEditor官网文档](http://kindeditor.net/doc.php)。
+you can configure ```clientOption``` and ```editorType``` to change the kindeditor's preference, the detail configure see the official website[KindEditor website](http://kindeditor.net/doc.php). / 编辑器相关配置，请在`view` 中配置，参数为`clientOptions`，比如定制菜单，编辑器大小等等，具体参数请查看[KindEditor官网文档](http://kindeditor.net/doc.php)。
 
 ######```editorType``` configure / ```editorType```配置
 
