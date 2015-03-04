@@ -80,8 +80,7 @@
 <h2>
 <a id="configure--配置相关" class="anchor" href="#configure--%E9%85%8D%E7%BD%AE%E7%9B%B8%E5%85%B3" aria-hidden="true"><span class="octicon octicon-link"></span></a>configure / 配置相关</h2>
 
-<h5>
-<a id="you-can-configure-clientoption-and-editortype-to-change-the-kindeditors-preference-the-detail-configure-see-the-official-websitekindeditor-website--编辑器相关配置请在view-中配置参数为clientoptions比如定制菜单编辑器大小等等具体参数请查看kindeditor官网文档" class="anchor" href="#you-can-configure-clientoption-and-editortype-to-change-the-kindeditors-preference-the-detail-configure-see-the-official-websitekindeditor-website--%E7%BC%96%E8%BE%91%E5%99%A8%E7%9B%B8%E5%85%B3%E9%85%8D%E7%BD%AE%E8%AF%B7%E5%9C%A8view-%E4%B8%AD%E9%85%8D%E7%BD%AE%E5%8F%82%E6%95%B0%E4%B8%BAclientoptions%E6%AF%94%E5%A6%82%E5%AE%9A%E5%88%B6%E8%8F%9C%E5%8D%95%E7%BC%96%E8%BE%91%E5%99%A8%E5%A4%A7%E5%B0%8F%E7%AD%89%E7%AD%89%E5%85%B7%E4%BD%93%E5%8F%82%E6%95%B0%E8%AF%B7%E6%9F%A5%E7%9C%8Bkindeditor%E5%AE%98%E7%BD%91%E6%96%87%E6%A1%A3" aria-hidden="true"><span class="octicon octicon-link"></span></a>you can configure <code>clientOption</code> and <code>editorType</code> to change the kindeditor's preference, the detail configure see the official website<a href="http://kindeditor.net/doc.php">KindEditor website</a>. / 编辑器相关配置，请在<code>view</code> 中配置，参数为<code>clientOptions</code>，比如定制菜单，编辑器大小等等，具体参数请查看<a href="http://kindeditor.net/doc.php">KindEditor官网文档</a>。</h5>
+<p>you can configure <code>clientOption</code> and <code>editorType</code> to change the kindeditor's preference, the detail configure see the official website<a href="http://kindeditor.net/doc.php">KindEditor website</a>. / 编辑器相关配置，请在<code>view</code> 中配置，参数为<code>clientOptions</code>，比如定制菜单，编辑器大小等等，具体参数请查看<a href="http://kindeditor.net/doc.php">KindEditor官网文档</a>。</p>
 
 <h6>
 <a id="editortype-configure--editortype配置" class="anchor" href="#editortype-configure--editortype%E9%85%8D%E7%BD%AE" aria-hidden="true"><span class="octicon octicon-link"></span></a>
@@ -91,40 +90,52 @@
 <li>
 <p><code>editor</code> work as editor，default configure./配置为富文本编辑器，默认配置</p>
 
-<p>usage:<code>&lt;?= $form-&gt;field($model, 'content')-&gt;widget('pjkui\kindeditor\Kindeditor',['clientOptions'=&gt;['allowFileManager'=&gt;'true','allowUpload'=&gt;'true']]) ?&gt;</code></p>
+<p>usage:</p>
+
+<p><code>&lt;?= $form-&gt;field($model, 'content')-&gt;widget('pjkui\kindeditor\Kindeditor',['clientOptions'=&gt;['allowFileManager'=&gt;'true','allowUpload'=&gt;'true']]) ?&gt;</code></p>
 </li>
 <li><p><code>uploadButton</code>Kindediotr work as a upload file button ,can upload file/picture to the server automatic /这时候配置kindeditor为上传文件按钮，可以自动上传文件到服务器</p></li>
 </ol>
 
-<p>usage:<code>&lt;?= $form-&gt;field($model, 'article_pic')-&gt;widget('pjkui\kindeditor\Kindeditor',['clientOptions'=&gt;['allowFileManager'=&gt;'true','allowUpload'=&gt;'true'],'editorType'=&gt;'uploadButton]) ?&gt;</code></p>
+<p>usage:</p>
+
+<p><code>&lt;?= $form-&gt;field($model, 'article_pic')-&gt;widget('pjkui\kindeditor\Kindeditor',['clientOptions'=&gt;['allowFileManager'=&gt;'true','allowUpload'=&gt;'true'],'editorType'=&gt;'uploadButton]) ?&gt;</code></p>
 
 <ol>
 <li>
 <code>colorpicker</code>kindeditor work as color picker / 配置kindeditor为取色器</li>
 </ol>
 
-<p>usage:<code>&lt;?= $form-&gt;field($model, 'content')-&gt;widget('pjkui\kindeditor\Kindeditor','editorType'=&gt;'colorpicker']) ?&gt;</code></p>
+<p>usage:</p>
+
+<p><code>&lt;?= $form-&gt;field($model, 'content')-&gt;widget('pjkui\kindeditor\Kindeditor','editorType'=&gt;'colorpicker']) ?&gt;</code></p>
 
 <ol>
 <li>
 <code>file-manager</code>kindeditor work as file manager,can view and select the file which uploaded by it . / 配置kindeditor为文件管理器，可以查看和选着其上传的文件。</li>
 </ol>
 
-<p>usage:<code>&lt;?= $form-&gt;field($model, 'article_pic')-&gt;widget('pjkui\kindeditor\Kindeditor',['clientOptions'=&gt;['allowFileManager'=&gt;'true','allowUpload'=&gt;'true'],'editorType'=&gt;'file-manager']) ?&gt;</code></p>
+<p>usage:</p>
+
+<p><code>&lt;?= $form-&gt;field($model, 'article_pic')-&gt;widget('pjkui\kindeditor\Kindeditor',['clientOptions'=&gt;['allowFileManager'=&gt;'true','allowUpload'=&gt;'true'],'editorType'=&gt;'file-manager']) ?&gt;</code></p>
 
 <ol>
 <li>
 <code>image-dialog</code>kindeditor work as image upload dialog. / 配置kindeditor为图片上传对话框。</li>
 </ol>
 
-<p>usage:<code>&lt;?= $form-&gt;field($model, 'article_pic')-&gt;widget('pjkui\kindeditor\Kindeditor',['clientOptions'=&gt;['allowFileManager'=&gt;'true','allowUpload'=&gt;'true'],'editorType'=&gt;'image-dialog']) ?&gt;</code></p>
+<p>usage:</p>
+
+<p><code>&lt;?= $form-&gt;field($model, 'article_pic')-&gt;widget('pjkui\kindeditor\Kindeditor',['clientOptions'=&gt;['allowFileManager'=&gt;'true','allowUpload'=&gt;'true'],'editorType'=&gt;'image-dialog']) ?&gt;</code></p>
 
 <ol>
 <li>
 <code>file-dialog</code>kindeditor work as file upload dialog. / 配置kindeditor为文件上传对话框。</li>
 </ol>
 
-<p>usage:<code>&lt;?= $form-&gt;field($model, 'article_pic')-&gt;widget('pjkui\kindeditor\Kindeditor',['clientOptions'=&gt;['allowFileManager'=&gt;'true','allowUpload'=&gt;'true'],'editorType'=&gt;'file-dialog']) ?&gt;</code></p>
+<p>usage:</p>
+
+<p><code>&lt;?= $form-&gt;field($model, 'article_pic')-&gt;widget('pjkui\kindeditor\Kindeditor',['clientOptions'=&gt;['allowFileManager'=&gt;'true','allowUpload'=&gt;'true'],'editorType'=&gt;'file-dialog']) ?&gt;</code></p>
 
 <p>简单实例:  </p>
 
