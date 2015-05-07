@@ -1,8 +1,8 @@
 {
     "name": "pjkui/kindeditor",
     "description": "kindeditor编辑器",
-    "license": "null",
-    "type": "library",
+    "license": "BSD-3-Clause",
+    "type": "yii2-extension",
     "authors": [
         {
             "name": "Quinn Pan",
@@ -12,6 +12,7 @@
     ],
     "minimum-stability": "stable",
     "require": {
+        "yiisoft/yii2": "*",
         "php": ">=5.2"
     },
     "autoload": {
