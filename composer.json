@@ -10,7 +10,6 @@
             "homepage":"http://www.pjkui.com"
         }
     ],
-    "minimum-stability": "stable",
     "require": {
         "yiisoft/yii2": "*",
         "php": ">=5.2"
