@@ -7,7 +7,7 @@
         {
             "name": "Quinn Pan",
             "email": "pjkui@qq.com"
-            "homepage": "http://www.pjkui.com"
+            "homepage":"http://www.pjkui.com"
         }
     ],
     "minimum-stability": "stable",
