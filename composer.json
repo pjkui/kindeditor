@@ -1,18 +1,22 @@
 {
     "name": "pjkui/kindeditor",
-    "description": "desc",
+    "description": "kindeditor编辑器",
     "license": "null",
+    "type": "library",
     "authors": [
         {
             "name": "Quinn Pan",
             "email": "pjkui@qq.com"
+            "homepage": "http://www.pjkui.com"
         }
     ],
     "minimum-stability": "stable",
-    "require": {},
+    "require": {
+        "php": ">=5.2"
+    },
     "autoload": {
         "psr-4": {
-            "pjkui\\kindeditor\\": ""
+            "pjkui\\kindeditor\\":""
         }
     }
 }
