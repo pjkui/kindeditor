@@ -18,9 +18,10 @@ class KindEditorAsset extends AssetBundle {
         'lang/zh_cn.js',
        // 'kindeditor.js'
     ];
-     public $css=[
+    public $css=[
         'themes/default/default.css'
     ];
+    
     public $jsOptions=[
         'charset'=>'utf8',
     ];

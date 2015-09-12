@@ -7,7 +7,7 @@
  * @link http://www.pjkui.com
  * @QQ 714428042
  * @date 2015-3-4
- 
+
  */
 
 namespace pjkui\kindeditor;
@@ -65,47 +65,45 @@ class KindEditor extends InputWidget {
                     return Html::activeInput('text', $this->model, $this->attribute, ['id' => $this->id]) . '<input type="button" id="colorpicker" value="打开取色器" />';
 
                     break;
-            case 'file-manager':
+                case 'file-manager':
                     return Html::activeInput('text', $this->model, $this->attribute, ['id' => $this->id]) . '<input type="button" id="filemanager" value="浏览服务器" />';
 
                     break;
-             case 'image-dialog':
+                case 'image-dialog':
                     return Html::activeInput('text', $this->model, $this->attribute, ['id' => $this->id]) . '<input type="button" id="imageBtn" value="选择图片" />';
 
                     break;
-             case 'file-dialog':
+                case 'file-dialog':
                     return Html::activeInput('text', $this->model, $this->attribute, ['id' => $this->id]) . '<input type="button" id="insertfile" value="选择文件" />';
 
                     break;
-                
+
                 default:
-                     return Html::activeTextarea($this->model, $this->attribute, ['id' => $this->id]);
+                    return Html::activeTextarea($this->model, $this->attribute, ['id' => $this->id]);
                     break;
             }
-           
         } else {
-              switch ($this->editorType) {
+            switch ($this->editorType) {
                 case 'uploadButton':
                     return Html::input('text', $this->id, $this->value, ['id' => $this->id, 'readonly' => "readonly"]) . '<input type="button" id="uploadButton" value="Upload" />';
                     break;
                 case 'colorpicker':
                     return Html::input('text', $this->id, $this->value, ['id' => $this->id]) . '<input type="button" id="colorpicker" value="打开取色器" />';
                     break;
-            case 'file-manager':
+                case 'file-manager':
                     return Html::input('text', $this->id, $this->value, ['id' => $this->id]) . '<input type="button" id="filemanager" value="浏览服务器" />';
                     break;
-             case 'image-dialog':
+                case 'image-dialog':
                     return Html::input('text', $this->id, $this->value, ['id' => $this->id]) . '<input type="button" id="imageBtn" value="选择图片" />';
                     break;
-             case 'file-dialog':
+                case 'file-dialog':
                     return Html::input('text', $this->id, $this->value, ['id' => $this->id]) . '<input type="button" id="insertfile" value="选择文件" />';
                     break;
-                
+
                 default:
-                     return Html::textarea($this->id, $this->value, ['id' => $this->id]);
+                    return Html::textarea($this->id, $this->value, ['id' => $this->id]);
                     break;
             }
-            
         }
     }
 
@@ -116,13 +114,13 @@ class KindEditor extends InputWidget {
         //UEditorAsset::register($this->view);
         KindEditorAsset::register($this->view);
         $clientOptions = Json::encode($this->clientOptions);
-        
-        $fileManagerJson=Url::to(['Kupload', 'action' => 'fileManagerJson']);
+
+        $fileManagerJson = Url::to(['Kupload', 'action' => 'fileManagerJson']);
         $uploadJson = Url::to(['Kupload', 'action' => 'uploadJson']);
         switch ($this->editorType) {
             case 'uploadButton':
-                $url =Url::to(['Kupload', 'action' => 'uploadJson','dir'=>'file']);
-               
+                $url = Url::to(['Kupload', 'action' => 'uploadJson', 'dir' => 'file']);
+
                 $script = <<<EOT
                              KindEditor.ready(function(K) {
 				var uploadbutton = K.uploadbutton({

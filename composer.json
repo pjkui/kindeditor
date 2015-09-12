@@ -1,22 +1,18 @@
 {
     "name": "pjkui/kindeditor",
-    "description": "kindeditor编辑器",
-    "license": "BSD-3-Clause",
-    "type": "yii2-extension",
+    "description": "desc",
+    "license": "MIT",
     "authors": [
         {
             "name": "Quinn Pan",
-            "email": "pjkui@qq.com",
-            "homepage":"http://www.pjkui.com"
+            "email": "pjkui@qq.com"
         }
     ],
-    "require": {
-        "yiisoft/yii2": "*",
-        "php": ">=5.2"
-    },
+    
+    "require": {},
     "autoload": {
         "psr-4": {
-            "pjkui\\kindeditor\\":""
+            "pjkui\\kindeditor\\": ""
         }
     }
 }
