@@ -15,7 +15,10 @@ or add
 `
 
 to the `require` section of your `composer.json` file.
-或者直接将程序文件放到系统的vendor下面
+
+或者直接将程序文件放到系统的vendor下面,其实建议用compaser,这个是比较方便和规范的安装方法，如果是拷贝的话，有一个文件需要修改，以保证这个kindeditor类被加载。
+这个文件是`/vendor/composer/autoload_psr4.php`.添加一行
+`'pjkui\\kindeditor\\'=>array($vendorDir . '/pjkui/kindeditor')`,
 ### Usage example / 应用方法
 
 ####controller / 控制器:  
