@@ -58,6 +58,7 @@ or / 或者：
 
 ######`editorType` configure / `editorType`配置
 1. `editor` work as editor，default configure./配置为富文本编辑器，默认配置
+ 
  ```php
  usage:
  <?= $form->field($model, 'content')->widget('pjkui\kindeditor\Kindeditor',
@@ -66,6 +67,7 @@ or / 或者：
                             ]
         ]) ?>
  ```
+ 
 2. `uploadButton`Kindediotr work as a upload file button ,can upload file/picture to the server automatic /这时候配置kindeditor为上传文件按钮，可以自动上传文件到服务器
 ```php
 usage:
