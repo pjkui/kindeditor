@@ -1,5 +1,8 @@
 KindEditor
 ===========
+**修复了linux下的一些bug，由于Yii China 无法更新这些信息，抱歉。使用方法务必参考本文，YiiChina上的方法有拼写问题，因为无法修改，所以一定要看这个！！！***
+
+
 中文的使用说明在页面下部
 # install
 Either run
