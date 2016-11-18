@@ -46,7 +46,7 @@ echo $form->field($model,'colum')->widget('pjkui\kindeditor\KindEditor',[]);
 
 or ：
 ```php
-<?= $form->field($model, 'content')->widget('pjkui\kindeditor\Kindeditor',
+<?= $form->field($model, 'content')->widget('pjkui\kindeditor\KindEditor',
 ['clientOptions'=>['allowFileManager'=>'true',
 'allowUpload'=>'true']]) 
 ?>
@@ -59,7 +59,7 @@ or ：
  
 usage:
 ```php
- <?= $form->field($model, 'content')->widget('pjkui\kindeditor\Kindeditor',
+ <?= $form->field($model, 'content')->widget('pjkui\kindeditor\KindEditor',
         ['clientOptions'=>['allowFileManager'=>'true',
                             'allowUpload'=>'true'
                             ]
@@ -69,7 +69,7 @@ usage:
 2. `uploadButton`Kindediotr work as a upload file button ,can upload file/picture to the server automatic 
 usage:
 ```php
-<?= $form->field($model, 'article_pic')->widget('pjkui\kindeditor\Kindeditor',
+<?= $form->field($model, 'article_pic')->widget('pjkui\kindeditor\KindEditor',
                     ['clientOptions'=>[
                                         'allowFileManager'=>'true',
                                         'allowUpload'=>'true'
@@ -81,14 +81,14 @@ usage:
 3. `colorpicker`kindeditor work as color picker 
 usage:
 ```php
-<?= $form->field($model, 'content')->widget('pjkui\kindeditor\Kindeditor',
+<?= $form->field($model, 'content')->widget('pjkui\kindeditor\KindEditor',
                                                     'editorType'=>'colorpicker'])
         ?>
 ```
 4. `file-manager`kindeditor work as file manager,can view and select the file which uploaded by it . 
 usage:
 ```php
-<?= $form->field($model, 'article_pic')->widget('pjkui\kindeditor\Kindeditor',
+<?= $form->field($model, 'article_pic')->widget('pjkui\kindeditor\KindEditor',
                     ['clientOptions'=>[
                                 'allowFileManager'=>'true',
                                 'allowUpload'=>'true'
@@ -100,7 +100,7 @@ usage:
 5. `image-dialog`kindeditor work as image upload dialog. 
 usage:
 ```php
-<?= $form->field($model, 'article_pic')->widget('pjkui\kindeditor\Kindeditor',
+<?= $form->field($model, 'article_pic')->widget('pjkui\kindeditor\KindEditor',
                         ['clientOptions'=>['allowFileManager'=>'true',
                                             'allowUpload'=>'true'
                                             ],
@@ -111,7 +111,7 @@ usage:
 6. `file-dialog`kindeditor work as file upload dialog. 
 usage:
 ```php
-<?= $form->field($model, 'article_pic')->widget('pjkui\kindeditor\Kindeditor',
+<?= $form->field($model, 'article_pic')->widget('pjkui\kindeditor\KindEditor',
                                 ['clientOptions'=>['allowFileManager'=>'true',
                                                     'allowUpload'=>'true'],
                                 'editorType'=>'file-dialog'
@@ -194,7 +194,7 @@ echo $form->field($model,'colum')->widget('pjkui\kindeditor\KindEditor',[]);
 
 或者：
 ```php
-<?= $form->field($model, 'content')->widget('pjkui\kindeditor\Kindeditor',
+<?= $form->field($model, 'content')->widget('pjkui\kindeditor\KindEditor',
 ['clientOptions'=>['allowFileManager'=>'true',
 'allowUpload'=>'true']]) 
 ?>
@@ -209,7 +209,7 @@ echo $form->field($model,'colum')->widget('pjkui\kindeditor\KindEditor',[]);
  示例：
  
 ```php
-<?= $form->field($model, 'content')->widget('pjkui\kindeditor\Kindeditor',
+<?= $form->field($model, 'content')->widget('pjkui\kindeditor\KindEditor',
         ['clientOptions'=>['allowFileManager'=>'true',
                             'allowUpload'=>'true'
                             ]
@@ -221,7 +221,7 @@ echo $form->field($model,'colum')->widget('pjkui\kindeditor\KindEditor',[]);
  示例：
  
 ```php
-<?= $form->field($model, 'article_pic')->widget('pjkui\kindeditor\Kindeditor',
+<?= $form->field($model, 'article_pic')->widget('pjkui\kindeditor\KindEditor',
                     ['clientOptions'=>[
                                         'allowFileManager'=>'true',
                                         'allowUpload'=>'true'
@@ -234,7 +234,7 @@ echo $form->field($model,'colum')->widget('pjkui\kindeditor\KindEditor',[]);
  示例：
 
 ```php
-<?= $form->field($model, 'content')->widget('pjkui\kindeditor\Kindeditor',
+<?= $form->field($model, 'content')->widget('pjkui\kindeditor\KindEditor',
                                                     'editorType'=>'colorpicker'])
         ?>
 ```
@@ -242,7 +242,7 @@ echo $form->field($model,'colum')->widget('pjkui\kindeditor\KindEditor',[]);
  示例：
 
 ```php
-<?= $form->field($model, 'article_pic')->widget('pjkui\kindeditor\Kindeditor',
+<?= $form->field($model, 'article_pic')->widget('pjkui\kindeditor\KindEditor',
                     ['clientOptions'=>[
                                 'allowFileManager'=>'true',
                                 'allowUpload'=>'true'
@@ -255,7 +255,7 @@ echo $form->field($model,'colum')->widget('pjkui\kindeditor\KindEditor',[]);
  示例：
 
 ```php
-<?= $form->field($model, 'article_pic')->widget('pjkui\kindeditor\Kindeditor',
+<?= $form->field($model, 'article_pic')->widget('pjkui\kindeditor\KindEditor',
                         ['clientOptions'=>['allowFileManager'=>'true',
                                             'allowUpload'=>'true'
                                             ],
@@ -268,7 +268,7 @@ echo $form->field($model,'colum')->widget('pjkui\kindeditor\KindEditor',[]);
  示例：
 
 ```php
-<?= $form->field($model, 'article_pic')->widget('pjkui\kindeditor\Kindeditor',
+<?= $form->field($model, 'article_pic')->widget('pjkui\kindeditor\KindEditor',
                                 ['clientOptions'=>['allowFileManager'=>'true',
                                                     'allowUpload'=>'true'],
                                 'editorType'=>'file-dialog'
