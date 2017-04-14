@@ -49,8 +49,12 @@ class KindEditor extends InputWidget {
             'height' => '400',
                 //'langType' => (strtolower(Yii::$app->language) == 'en-us') ? 'en' : 'zh_cn',//kindeditor支持一下语言：en,zh_CN,zh_TW,ko,ar
         ];
+        
         $this->clientOptions = ArrayHelper::merge($this->_options, $this->clientOptions);
-        parent::init();
+        
+        if($this->hasModel()){
+            parent::init();
+        }
     }
 
     public function run() {
