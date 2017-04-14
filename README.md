@@ -1,5 +1,8 @@
 KindEditor
 ===========
+**修复了linux下的一些bug，由于Yii China 无法更新这些信息，抱歉。使用方法务必参考本文，YiiChina上的方法有拼写问题，因为无法修改，所以一定要看这个！！！***
+
+
 中文的使用说明在页面下部
 # install
 Either run
@@ -46,7 +49,7 @@ echo $form->field($model,'colum')->widget('pjkui\kindeditor\KindEditor',[]);
 
 or ：
 ```php
-<?= $form->field($model, 'content')->widget('pjkui\kindeditor\Kindeditor',
+<?= $form->field($model, 'content')->widget('pjkui\kindeditor\KindEditor',
 ['clientOptions'=>['allowFileManager'=>'true',
 'allowUpload'=>'true']]) 
 ?>
@@ -59,7 +62,7 @@ or ：
  
 usage:
 ```php
- <?= $form->field($model, 'content')->widget('pjkui\kindeditor\Kindeditor',
+ <?= $form->field($model, 'content')->widget('pjkui\kindeditor\KindEditor',
         ['clientOptions'=>['allowFileManager'=>'true',
                             'allowUpload'=>'true'
                             ]
@@ -69,7 +72,7 @@ usage:
 2. `uploadButton`Kindediotr work as a upload file button ,can upload file/picture to the server automatic 
 usage:
 ```php
-<?= $form->field($model, 'article_pic')->widget('pjkui\kindeditor\Kindeditor',
+<?= $form->field($model, 'article_pic')->widget('pjkui\kindeditor\KindEditor',
                     ['clientOptions'=>[
                                         'allowFileManager'=>'true',
                                         'allowUpload'=>'true'
@@ -81,14 +84,14 @@ usage:
 3. `colorpicker`kindeditor work as color picker 
 usage:
 ```php
-<?= $form->field($model, 'content')->widget('pjkui\kindeditor\Kindeditor',
+<?= $form->field($model, 'content')->widget('pjkui\kindeditor\KindEditor',
                                                     'editorType'=>'colorpicker'])
         ?>
 ```
 4. `file-manager`kindeditor work as file manager,can view and select the file which uploaded by it . 
 usage:
 ```php
-<?= $form->field($model, 'article_pic')->widget('pjkui\kindeditor\Kindeditor',
+<?= $form->field($model, 'article_pic')->widget('pjkui\kindeditor\KindEditor',
                     ['clientOptions'=>[
                                 'allowFileManager'=>'true',
                                 'allowUpload'=>'true'
@@ -100,7 +103,7 @@ usage:
 5. `image-dialog`kindeditor work as image upload dialog. 
 usage:
 ```php
-<?= $form->field($model, 'article_pic')->widget('pjkui\kindeditor\Kindeditor',
+<?= $form->field($model, 'article_pic')->widget('pjkui\kindeditor\KindEditor',
                         ['clientOptions'=>['allowFileManager'=>'true',
                                             'allowUpload'=>'true'
                                             ],
@@ -111,7 +114,7 @@ usage:
 6. `file-dialog`kindeditor work as file upload dialog. 
 usage:
 ```php
-<?= $form->field($model, 'article_pic')->widget('pjkui\kindeditor\Kindeditor',
+<?= $form->field($model, 'article_pic')->widget('pjkui\kindeditor\KindEditor',
                                 ['clientOptions'=>['allowFileManager'=>'true',
                                                     'allowUpload'=>'true'],
                                 'editorType'=>'file-dialog'
@@ -194,7 +197,7 @@ echo $form->field($model,'colum')->widget('pjkui\kindeditor\KindEditor',[]);
 
 或者：
 ```php
-<?= $form->field($model, 'content')->widget('pjkui\kindeditor\Kindeditor',
+<?= $form->field($model, 'content')->widget('pjkui\kindeditor\KindEditor',
 ['clientOptions'=>['allowFileManager'=>'true',
 'allowUpload'=>'true']]) 
 ?>
@@ -209,7 +212,7 @@ echo $form->field($model,'colum')->widget('pjkui\kindeditor\KindEditor',[]);
  示例：
  
 ```php
-<?= $form->field($model, 'content')->widget('pjkui\kindeditor\Kindeditor',
+<?= $form->field($model, 'content')->widget('pjkui\kindeditor\KindEditor',
         ['clientOptions'=>['allowFileManager'=>'true',
                             'allowUpload'=>'true'
                             ]
@@ -221,7 +224,7 @@ echo $form->field($model,'colum')->widget('pjkui\kindeditor\KindEditor',[]);
  示例：
  
 ```php
-<?= $form->field($model, 'article_pic')->widget('pjkui\kindeditor\Kindeditor',
+<?= $form->field($model, 'article_pic')->widget('pjkui\kindeditor\KindEditor',
                     ['clientOptions'=>[
                                         'allowFileManager'=>'true',
                                         'allowUpload'=>'true'
@@ -234,7 +237,7 @@ echo $form->field($model,'colum')->widget('pjkui\kindeditor\KindEditor',[]);
  示例：
 
 ```php
-<?= $form->field($model, 'content')->widget('pjkui\kindeditor\Kindeditor',
+<?= $form->field($model, 'content')->widget('pjkui\kindeditor\KindEditor',
                                                     'editorType'=>'colorpicker'])
         ?>
 ```
@@ -242,7 +245,7 @@ echo $form->field($model,'colum')->widget('pjkui\kindeditor\KindEditor',[]);
  示例：
 
 ```php
-<?= $form->field($model, 'article_pic')->widget('pjkui\kindeditor\Kindeditor',
+<?= $form->field($model, 'article_pic')->widget('pjkui\kindeditor\KindEditor',
                     ['clientOptions'=>[
                                 'allowFileManager'=>'true',
                                 'allowUpload'=>'true'
@@ -255,7 +258,7 @@ echo $form->field($model,'colum')->widget('pjkui\kindeditor\KindEditor',[]);
  示例：
 
 ```php
-<?= $form->field($model, 'article_pic')->widget('pjkui\kindeditor\Kindeditor',
+<?= $form->field($model, 'article_pic')->widget('pjkui\kindeditor\KindEditor',
                         ['clientOptions'=>['allowFileManager'=>'true',
                                             'allowUpload'=>'true'
                                             ],
@@ -268,7 +271,7 @@ echo $form->field($model,'colum')->widget('pjkui\kindeditor\KindEditor',[]);
  示例：
 
 ```php
-<?= $form->field($model, 'article_pic')->widget('pjkui\kindeditor\Kindeditor',
+<?= $form->field($model, 'article_pic')->widget('pjkui\kindeditor\KindEditor',
                                 ['clientOptions'=>['allowFileManager'=>'true',
                                                     'allowUpload'=>'true'],
                                 'editorType'=>'file-dialog'
@@ -294,7 +297,7 @@ echo KindEditor::widget([
         'italic', 'underline', 'strikethrough', 'lineheight', 'removeformat', '|', 'image', 'multiimage',
         'flash', 'media', 'insertfile', 'table', 'hr', 'emoticons', 'baidumap', 'pagebreak',
         'anchor', 'link', 'unlink', '|', 'about'
-        ],
-        'id'=>'thisID',//填写你想给textarea的id
+       ],
+       'id'=>'thisID',//填写你想给textarea的id
 ]);
 ```
