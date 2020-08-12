@@ -36,6 +36,12 @@ class KindEditorAction extends Action {
     public $save_path = null;
     public $save_url = null;
     public $max_size = 1000000; // 最大文件大小
+    public $ext_arr = [ // 定义允许上传的文件扩展名
+                'image' => ['gif', 'jpg', 'jpeg', 'png', 'bmp'],
+                'flash' => ['swf', 'flv'],
+                'media' => ['swf', 'flv', 'mp3', 'wav', 'wma', 'wmv', 'mid', 'avi', 'mpg', 'asf', 'rm', 'rmvb'],
+                'file' => ['doc', 'docx', 'xls', 'xlsx', 'ppt', 'htm', 'html', 'txt', 'zip', 'rar', 'gz', 'bz2'],
+            ];
 
     // public $save_path;
     public function init() {
@@ -68,16 +74,6 @@ class KindEditorAction extends Action {
         if ($this->save_url === null) {
             $this->save_url = $this->root_url;
         }
-
-        // 图片扩展名
-        // $ext_arr = ['gif', 'jpg', 'jpeg', 'png', 'bmp'],
-        // 定义允许上传的文件扩展名
-        // $ext_arr = array(
-        //     'image' => array('gif', 'jpg', 'jpeg', 'png', 'bmp'),
-        //     'flash' => array('swf', 'flv'),
-        //     'media' => array('swf', 'flv', 'mp3', 'wav', 'wma', 'wmv', 'mid', 'avi', 'mpg', 'asf', 'rm', 'rmvb'),
-        //     'file' => array('doc', 'docx', 'xls', 'xlsx', 'ppt', 'htm', 'html', 'txt', 'zip', 'rar', 'gz', 'bz2'),
-        // ),
 
         // load config file
 
@@ -140,7 +136,7 @@ class KindEditorAction extends Action {
     public function fileManagerJsonAction() {
 
         // 图片扩展名
-        $ext_arr = array('gif', 'jpg', 'jpeg', 'png', 'bmp');
+        $ext_arr = $this->ext_arr['image'];
 
         // 目录名
         $dir_name = empty($_GET['dir']) ? '' : trim($_GET['dir']);
@@ -241,13 +237,7 @@ class KindEditorAction extends Action {
 
     public function UploadJosnAction() {
         // 定义允许上传的文件扩展名
-        $ext_arr = array(
-            'image' => array('gif', 'jpg', 'jpeg', 'png', 'bmp'),
-            'flash' => array('swf', 'flv'),
-            'media' => array('swf', 'flv', 'mp3', 'wav', 'wma', 'wmv', 'mid', 'avi', 'mpg', 'asf', 'rm', 'rmvb'),
-            'file' => array('doc', 'docx', 'xls', 'xlsx', 'ppt', 'htm', 'html', 'txt', 'zip', 'rar', 'gz', 'bz2'),
-        );
-
+        $ext_arr = $this->ext_arr;
 
         // PHP上传失败
         if (!empty($_FILES['imgFile']['error'])) {
