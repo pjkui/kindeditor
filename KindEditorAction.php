@@ -37,25 +37,30 @@ class KindEditorAction extends Action {
     public $save_url;
     public $max_size;
 
-    //public $save_path;
+    // public $save_path;
     public function init() {
         // close csrf
         Yii::$app->request->enableCsrfValidation = false;
         // 默认设置
 
         // $this->php_path =  dirname(__FILE__) . '/';
-        $this->php_path =  $_SERVER['DOCUMENT_ROOT'] . '/';
-        $this->php_url =  '/';
+        $this->php_path = Yii::getAlias('@webroot') . '/';
+        $this->php_url = Yii::getAlias('@web') . '/';
+
         // 根目录路径，可以指定绝对路径，比如 /var/www/attached/
         $this->root_path = $this->php_path . 'upload/';
+
         // 根目录URL，可以指定绝对路径，比如 http://www.yoursite.com/attached/
         $this->root_url = $this->php_url . 'upload/';
+
+        // 文件保存目录路径
+        $this->save_path = $this->root_path;
+
+        // 文件保存目录URL
+        $this->save_url = $this->root_url;
+
         // 图片扩展名
         // $ext_arr = ['gif', 'jpg', 'jpeg', 'png', 'bmp'],
-        // 文件保存目录路径
-        $this->save_path = $this->php_path . 'upload/';
-        //文件保存目录URL
-        $this->save_url = $this->php_url . 'upload/';
         // 定义允许上传的文件扩展名
         // $ext_arr = array(
         //     'image' => array('gif', 'jpg', 'jpeg', 'png', 'bmp'),
@@ -65,7 +70,6 @@ class KindEditorAction extends Action {
         // ),
         // 最大文件大小
         $this->max_size = 1000000;
-        $this->save_path = realpath($this->save_path) . '/';
 
         // load config file
 
@@ -282,7 +286,7 @@ class KindEditorAction extends Action {
             }
             // 检查目录
             if (@is_dir($this->save_path) === false) {
-                $this->alert("上传目录不存在。");
+                mkdir($this->save_path); // 目录不存在在就创建目录
             }
             // 检查目录写权限
             if (@is_writable($this->save_path) === false) {
