@@ -35,7 +35,7 @@ class KindEditorAction extends Action {
     public $root_url = null;
     public $save_path = null;
     public $save_url = null;
-    public $max_size = null;
+    public $max_size = 1000000; // 最大文件大小
 
     // public $save_path;
     public function init() {
@@ -78,8 +78,6 @@ class KindEditorAction extends Action {
         //     'media' => array('swf', 'flv', 'mp3', 'wav', 'wma', 'wmv', 'mid', 'avi', 'mpg', 'asf', 'rm', 'rmvb'),
         //     'file' => array('doc', 'docx', 'xls', 'xlsx', 'ppt', 'htm', 'html', 'txt', 'zip', 'rar', 'gz', 'bz2'),
         // ),
-        // 最大文件大小
-        $this->max_size = 1000000;
 
         // load config file
 
