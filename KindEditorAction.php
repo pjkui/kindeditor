@@ -29,13 +29,13 @@ class KindEditorAction extends Action {
      * @var Array 保存配置的数组
      */
     public $config;
-    public $php_path;
-    public $php_url;
-    public $root_path;
-    public $root_url;
-    public $save_path;
-    public $save_url;
-    public $max_size;
+    public $php_path = null;
+    public $php_url = null;
+    public $root_path = null;
+    public $root_url = null;
+    public $save_path = null;
+    public $save_url = null;
+    public $max_size = null;
 
     // public $save_path;
     public function init() {
@@ -44,20 +44,30 @@ class KindEditorAction extends Action {
         // 默认设置
 
         // $this->php_path =  dirname(__FILE__) . '/';
-        $this->php_path = Yii::getAlias('@webroot') . '/';
-        $this->php_url = Yii::getAlias('@web') . '/';
+        if ($this->php_path === null) {
+            $this->php_path = Yii::getAlias('@webroot') . '/';
+        }
+        if ($this->php_url === null) {
+            $this->php_url = Yii::getAlias('@web') . '/';
+        }
 
         // 根目录路径，可以指定绝对路径，比如 /var/www/attached/
-        $this->root_path = $this->php_path . 'upload/';
-
+        if ($this->root_path === null) {
+            $this->root_path = $this->php_path . 'upload/';
+        }
         // 根目录URL，可以指定绝对路径，比如 http://www.yoursite.com/attached/
-        $this->root_url = $this->php_url . 'upload/';
+        if ($this->root_url === null) {
+            $this->root_url = $this->php_url . 'upload/';
+        }
 
         // 文件保存目录路径
-        $this->save_path = $this->root_path;
-
+        if ($this->save_path === null) {
+            $this->save_path = $this->root_path;
+        }
         // 文件保存目录URL
-        $this->save_url = $this->root_url;
+        if ($this->save_url === null) {
+            $this->save_url = $this->root_url;
+        }
 
         // 图片扩展名
         // $ext_arr = ['gif', 'jpg', 'jpeg', 'png', 'bmp'],
