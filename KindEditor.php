@@ -49,9 +49,9 @@ class KindEditor extends InputWidget {
             'height' => '400',
                 //'langType' => (strtolower(Yii::$app->language) == 'en-us') ? 'en' : 'zh_cn',//kindeditor支持一下语言：en,zh_CN,zh_TW,ko,ar
         ];
-        
+
         $this->clientOptions = ArrayHelper::merge($this->_options, $this->clientOptions);
-        
+
         if($this->hasModel()){
             parent::init();
         }
@@ -189,7 +189,7 @@ EOT;
                 $script = <<<EOT
                            KindEditor.ready(function(K) {
 				var editor = K.editor({
-                                      
+
 					fileManagerJson : '{$fileManagerJson}'
 				});
 				K('#filemanager').click(function() {
@@ -215,7 +215,7 @@ EOT;
 					allowFileManager : true,
                                         "uploadJson":"{$uploadJson}",
                                          "fileManagerJson":"{$fileManagerJson}",
-                                        
+
 				});
 				K('#imageBtn').click(function() {
 					editor.loadPlugin('image', function() {
@@ -239,7 +239,7 @@ EOT;
 					allowFileManager : true,
                                         "uploadJson":"{$uploadJson}",
                                          "fileManagerJson":"{$fileManagerJson}",
-                                        
+
 				});
 				K('#insertfile').click(function() {
 					editor.loadPlugin('insertfile', function() {
@@ -267,5 +267,3 @@ EOT;
     }
 
 }
-
-?>
