@@ -41,7 +41,7 @@ class KindEditor extends InputWidget {
      * @throws \yii\base\InvalidConfigException
      */
     public function init() {
-        $this->id = $this->hasModel() ? Html::getInputId($this->model, $this->attribute) : $this->id;
+        $this->id = $this->hasModel() ? Html::getInputId($this->model, $this->attribute).$this->id : $this->id;
         $this->_options = [
             'fileManagerJson' => Url::to(['Kupload', 'action' => 'fileManagerJson']),
             'uploadJson' => Url::to(['Kupload', 'action' => 'uploadJson']),
