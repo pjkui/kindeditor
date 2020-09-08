@@ -41,7 +41,7 @@ class KindEditor extends InputWidget {
      * @throws \yii\base\InvalidConfigException
      */
     public function init() {
-        $this->id = $this->hasModel() ? Html::getInputId($this->model, $this->attribute) : $this->id;
+        $this->id = $this->hasModel() ? Html::getInputId($this->model, $this->attribute).$this->id : $this->id;
         $this->_options = [
             'fileManagerJson' => Url::to(['Kupload', 'action' => 'fileManagerJson']),
             'uploadJson' => Url::to(['Kupload', 'action' => 'uploadJson']),
@@ -49,9 +49,9 @@ class KindEditor extends InputWidget {
             'height' => '400',
                 //'langType' => (strtolower(Yii::$app->language) == 'en-us') ? 'en' : 'zh_cn',//kindeditor支持一下语言：en,zh_CN,zh_TW,ko,ar
         ];
-        
+
         $this->clientOptions = ArrayHelper::merge($this->_options, $this->clientOptions);
-        
+
         if($this->hasModel()){
             parent::init();
         }
@@ -59,53 +59,56 @@ class KindEditor extends InputWidget {
 
     public function run() {
         $this->registerClientScript();
+        $options = $this->options;
+        $options['id'] = $this->id;
         if ($this->hasModel()) {
             switch ($this->editorType) {
                 case 'uploadButton':
-                    return Html::activeInput('text', $this->model, $this->attribute, ['id' => $this->id, 'readonly' => "readonly"]) . '<input type="button" id="uploadButton" value="Upload" />';
+                    return Html::activeInput('text', $this->model, $this->attribute, $options) . '<input type="button" id="uploadButton" value="Upload" />';
 
                     break;
                 case 'colorpicker':
-                    return Html::activeInput('text', $this->model, $this->attribute, ['id' => $this->id]) . '<input type="button" id="colorpicker" value="打开取色器" />';
+                    return Html::activeInput('text', $this->model, $this->attribute, $options) . '<input type="button" id="colorpicker" value="打开取色器" />';
 
                     break;
                 case 'file-manager':
-                    return Html::activeInput('text', $this->model, $this->attribute, ['id' => $this->id]) . '<input type="button" id="filemanager" value="浏览服务器" />';
+                    return Html::activeInput('text', $this->model, $this->attribute, $options) . '<input type="button" id="filemanager" value="浏览服务器" />';
 
                     break;
                 case 'image-dialog':
-                    return Html::activeInput('text', $this->model, $this->attribute, ['id' => $this->id]) . '<input type="button" id="imageBtn" value="选择图片" />';
+                    return Html::activeInput('text', $this->model, $this->attribute, $options) . '<input type="button" id="imageBtn" value="选择图片" />';
 
                     break;
                 case 'file-dialog':
-                    return Html::activeInput('text', $this->model, $this->attribute, ['id' => $this->id]) . '<input type="button" id="insertfile" value="选择文件" />';
+                    return Html::activeInput('text', $this->model, $this->attribute, $options) . '<input type="button" id="insertfile" value="选择文件" />';
 
                     break;
 
                 default:
-                    return Html::activeTextarea($this->model, $this->attribute, ['id' => $this->id]);
+                    return Html::activeTextarea($this->model, $this->attribute, $options);
                     break;
             }
         } else {
             switch ($this->editorType) {
                 case 'uploadButton':
-                    return Html::input('text', $this->id, $this->value, ['id' => $this->id, 'readonly' => "readonly"]) . '<input type="button" id="uploadButton" value="Upload" />';
+                    $options['readonly'] = 'readonly';
+                    return Html::input('text', $this->id, $this->value, $options) . '<input type="button" id="uploadButton" value="Upload" />';
                     break;
                 case 'colorpicker':
-                    return Html::input('text', $this->id, $this->value, ['id' => $this->id]) . '<input type="button" id="colorpicker" value="打开取色器" />';
+                    return Html::input('text', $this->id, $this->value, $options) . '<input type="button" id="colorpicker" value="打开取色器" />';
                     break;
                 case 'file-manager':
-                    return Html::input('text', $this->id, $this->value, ['id' => $this->id]) . '<input type="button" id="filemanager" value="浏览服务器" />';
+                    return Html::input('text', $this->id, $this->value, $options) . '<input type="button" id="filemanager" value="浏览服务器" />';
                     break;
                 case 'image-dialog':
-                    return Html::input('text', $this->id, $this->value, ['id' => $this->id]) . '<input type="button" id="imageBtn" value="选择图片" />';
+                    return Html::input('text', $this->id, $this->value, $options) . '<input type="button" id="imageBtn" value="选择图片" />';
                     break;
                 case 'file-dialog':
-                    return Html::input('text', $this->id, $this->value, ['id' => $this->id]) . '<input type="button" id="insertfile" value="选择文件" />';
+                    return Html::input('text', $this->id, $this->value, $options) . '<input type="button" id="insertfile" value="选择文件" />';
                     break;
 
                 default:
-                    return Html::textarea($this->id, $this->value, ['id' => $this->id]);
+                    return Html::textarea($this->id, $this->value, $options);
                     break;
             }
         }
@@ -189,7 +192,7 @@ EOT;
                 $script = <<<EOT
                            KindEditor.ready(function(K) {
 				var editor = K.editor({
-                                      
+
 					fileManagerJson : '{$fileManagerJson}'
 				});
 				K('#filemanager').click(function() {
@@ -215,7 +218,7 @@ EOT;
 					allowFileManager : true,
                                         "uploadJson":"{$uploadJson}",
                                          "fileManagerJson":"{$fileManagerJson}",
-                                        
+
 				});
 				K('#imageBtn').click(function() {
 					editor.loadPlugin('image', function() {
@@ -239,7 +242,7 @@ EOT;
 					allowFileManager : true,
                                         "uploadJson":"{$uploadJson}",
                                          "fileManagerJson":"{$fileManagerJson}",
-                                        
+
 				});
 				K('#insertfile').click(function() {
 					editor.loadPlugin('insertfile', function() {
@@ -267,5 +270,3 @@ EOT;
     }
 
 }
-
-?>
