@@ -1,6 +1,6 @@
 {
     "name": "pjkui/kindeditor",
-    "description": "desc",
+    "description": "Yii2 可以使用的KindEditor富文本编辑器。 KindEditor for Yii2",
     "license": "MIT",
     "authors": [
         {

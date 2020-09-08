@@ -7,19 +7,21 @@ KindEditor
 # install
 Either run
 
-`
+```bash
 $ php composer.phar require pjkui/kindeditor "*"
-`
+```
 
 or add
 
-`
+```php
 "pjkui/kindeditor": "*"
-`
-
+```
 to the `require` section of your `composer.json` file.
 
-`'pjkui\\kindeditor\\'=>array($vendorDir . '/pjkui/kindeditor')`,
+```php
+'pjkui\\kindeditor\\'=>array($vendorDir . '/pjkui/kindeditor')
+```
+
 # Usage example
 
 ## add an actions() method in controller  
@@ -35,7 +37,7 @@ public function actions()
 }
 ```
 
-##used in view :  
+## used in view :  
 ```php
 
 echo \pjkui\kindeditor\KindEditor::widget([]);
@@ -50,8 +52,12 @@ echo $form->field($model,'colum')->widget('pjkui\kindeditor\KindEditor',[]);
 or ：
 ```php
 <?= $form->field($model, 'content')->widget('pjkui\kindeditor\KindEditor',
-['clientOptions'=>['allowFileManager'=>'true',
-'allowUpload'=>'true']]) 
+[
+    'clientOptions'=>[
+        'allowFileManager'=>'true',
+        'allowUpload'=>'true'
+        ]
+]) 
 ?>
 ```
 ## configure 
@@ -62,26 +68,32 @@ or ：
  
 usage:
 ```php
- <?= $form->field($model, 'content')->widget('pjkui\kindeditor\KindEditor',
-        ['clientOptions'=>['allowFileManager'=>'true',
-                            'allowUpload'=>'true'
-                            ]
-        ]) ?>
+<?= $form->field($model, 'content')->widget('pjkui\kindeditor\KindEditor',
+        [
+            'clientOptions'=>[
+                'allowFileManager'=>'true',
+                'allowUpload'=>'true'
+                ]
+        ]) 
+?>
 ```
  
-2. `uploadButton`Kindediotr work as a upload file button ,can upload file/picture to the server automatic 
+2. `uploadButton` Kindediotr work as a upload file button ,can upload file/picture to the server automatic 
+
 usage:
 ```php
 <?= $form->field($model, 'article_pic')->widget('pjkui\kindeditor\KindEditor',
-                    ['clientOptions'=>[
+                    [
+                        'clientOptions'=>[
                                         'allowFileManager'=>'true',
                                         'allowUpload'=>'true'
                                         ],
-                    'editorType'=>'uploadButton
+                        'editorType'=>'uploadButton
                     ]) 
 ?>
 ```
 3. `colorpicker`kindeditor work as color picker 
+
 usage:
 ```php
 <?= $form->field($model, 'content')->widget('pjkui\kindeditor\KindEditor',
@@ -89,35 +101,44 @@ usage:
         ?>
 ```
 4. `file-manager`kindeditor work as file manager,can view and select the file which uploaded by it . 
+
 usage:
 ```php
 <?= $form->field($model, 'article_pic')->widget('pjkui\kindeditor\KindEditor',
-                    ['clientOptions'=>[
+                    [
+                        'clientOptions'=>[
                                 'allowFileManager'=>'true',
                                 'allowUpload'=>'true'
                                     ],
                         'editorType'=>'file-manager'
-                        ]) 
+                    ]) 
         ?>
 ```
 5. `image-dialog`kindeditor work as image upload dialog. 
+
 usage:
 ```php
 <?= $form->field($model, 'article_pic')->widget('pjkui\kindeditor\KindEditor',
-                        ['clientOptions'=>['allowFileManager'=>'true',
-                                            'allowUpload'=>'true'
-                                            ],
-                        'editorType'=>'image-dialog'
+                        [
+                            'clientOptions'=>[
+                                'allowFileManager'=>'true',
+                                'allowUpload'=>'true'
+                                ],
+                            'editorType'=>'image-dialog'
                         ]) 
 ?>
 ```
 6. `file-dialog`kindeditor work as file upload dialog. 
+
 usage:
 ```php
 <?= $form->field($model, 'article_pic')->widget('pjkui\kindeditor\KindEditor',
-                                ['clientOptions'=>['allowFileManager'=>'true',
-                                                    'allowUpload'=>'true'],
-                                'editorType'=>'file-dialog'
+                                [
+                                    'clientOptions'=>[
+                                        'allowFileManager'=>'true',
+                                        'allowUpload'=>'true'
+                                        ],
+                                    'editorType'=>'file-dialog'
                                 ])
     ?>
 ```
@@ -213,9 +234,11 @@ echo $form->field($model,'colum')->widget('pjkui\kindeditor\KindEditor',[]);
  
 ```php
 <?= $form->field($model, 'content')->widget('pjkui\kindeditor\KindEditor',
-        ['clientOptions'=>['allowFileManager'=>'true',
-                            'allowUpload'=>'true'
-                            ]
+        [
+            'clientOptions'=>[
+                'allowFileManager'=>'true',
+                'allowUpload'=>'true'
+                ]
         ])
  ?>
 ```
@@ -225,11 +248,12 @@ echo $form->field($model,'colum')->widget('pjkui\kindeditor\KindEditor',[]);
  
 ```php
 <?= $form->field($model, 'article_pic')->widget('pjkui\kindeditor\KindEditor',
-                    ['clientOptions'=>[
-                                        'allowFileManager'=>'true',
-                                        'allowUpload'=>'true'
-                                        ],
-                    'editorType'=>'uploadButton
+                    [
+                        'clientOptions'=>[
+                            'allowFileManager'=>'true',
+                            'allowUpload'=>'true'
+                            ],
+                        'editorType'=>'uploadButton
                     ]) 
 ?>
 ```
@@ -238,7 +262,7 @@ echo $form->field($model,'colum')->widget('pjkui\kindeditor\KindEditor',[]);
 
 ```php
 <?= $form->field($model, 'content')->widget('pjkui\kindeditor\KindEditor',
-                                                    'editorType'=>'colorpicker'])
+                                                    'editorType'=>'colorpicker')
         ?>
 ```
 4. 配置kindeditor为文件管理器，可以查看和选着其上传的文件。
@@ -246,10 +270,11 @@ echo $form->field($model,'colum')->widget('pjkui\kindeditor\KindEditor',[]);
 
 ```php
 <?= $form->field($model, 'article_pic')->widget('pjkui\kindeditor\KindEditor',
-                    ['clientOptions'=>[
-                                'allowFileManager'=>'true',
-                                'allowUpload'=>'true'
-                                    ],
+                    [
+                        'clientOptions'=>[
+                            'allowFileManager'=>'true',
+                            'allowUpload'=>'true'
+                            ],
                         'editorType'=>'file-manager'
                         ]) 
         ?>
@@ -259,10 +284,12 @@ echo $form->field($model,'colum')->widget('pjkui\kindeditor\KindEditor',[]);
 
 ```php
 <?= $form->field($model, 'article_pic')->widget('pjkui\kindeditor\KindEditor',
-                        ['clientOptions'=>['allowFileManager'=>'true',
-                                            'allowUpload'=>'true'
-                                            ],
-                        'editorType'=>'image-dialog'
+                        [
+                            'clientOptions'=>[
+                                'allowFileManager'=>'true',
+                                'allowUpload'=>'true'
+                                ],
+                            'editorType'=>'image-dialog'
                         ]) 
 ?>
 ```
@@ -272,10 +299,13 @@ echo $form->field($model,'colum')->widget('pjkui\kindeditor\KindEditor',[]);
 
 ```php
 <?= $form->field($model, 'article_pic')->widget('pjkui\kindeditor\KindEditor',
-                                ['clientOptions'=>['allowFileManager'=>'true',
-                                                    'allowUpload'=>'true'],
-                                'editorType'=>'file-dialog'
-                                ])
+                        [
+                            'clientOptions'=>[
+                                'allowFileManager'=>'true',
+                                'allowUpload'=>'true'
+                                ],
+                            'editorType'=>'file-dialog'
+                        ])
     ?>
 ```
 
