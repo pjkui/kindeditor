@@ -4,12 +4,33 @@ namespace pjkui\kindeditor\tests;
 
 use PHPUnit\Framework\TestCase;
 use pjkui\kindeditor\KindEditor;
+use Yii;
+use yii\base\Controller;
+use yii\base\Module;
 
 /**
  * @covers \pjkui\kindeditor\KindEditor
  */
 class KindEditorTest extends TestCase
 {
+    /**
+     * The widget calls Url::to(['Kupload', ...]) during init(), which requires
+     * an active controller on the application. Install one before every test.
+     */
+    protected function setUp(): void
+    {
+        parent::setUp();
+
+        $module = new Module('test', Yii::$app);
+        Yii::$app->controller = new Controller('site', $module);
+    }
+
+    protected function tearDown(): void
+    {
+        Yii::$app->controller = null;
+        parent::tearDown();
+    }
+
     public function testInitMergesUserOptionsOverDefaults(): void
     {
         $widget = new KindEditor([
