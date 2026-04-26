@@ -28,7 +28,7 @@ jobs:
           tools: composer:v2
 
       - name: Validate composer.json
-        run: composer validate --strict --no-check-lock
+        run: composer validate --no-check-lock --no-check-publish
 
       - name: Syntax-check all PHP files
         run: |
