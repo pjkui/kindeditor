@@ -50,12 +50,25 @@ new yii\web\Application([
         'assetManager' => [
             'basePath' => $runtime . '/assets',
             'baseUrl'  => '/assets',
-            // Stub the KindEditor bundle so asset publishing is a no-op in tests.
+            // Stub bundles so asset publishing is a no-op in tests.
+            // KindEditorAsset would publish the entire repo; YiiAsset/JqueryAsset
+            // pull from vendor/bower/jquery which is not available in CI vendor.
             'bundles' => [
                 'pjkui\kindeditor\KindEditorAsset' => [
                     'sourcePath' => null,
                     'js'         => [],
                     'css'        => [],
+                ],
+                'yii\web\JqueryAsset' => [
+                    'sourcePath' => null,
+                    'js'         => [],
+                    'css'        => [],
+                ],
+                'yii\web\YiiAsset' => [
+                    'sourcePath' => null,
+                    'js'         => [],
+                    'css'        => [],
+                    'depends'    => [],
                 ],
             ],
         ],
