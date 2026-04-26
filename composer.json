@@ -1,6 +1,8 @@
 {
     "name": "pjkui/kindeditor",
     "description": "Yii2 可以使用的KindEditor富文本编辑器。 KindEditor for Yii2",
+    "type": "yii2-extension",
+    "keywords": ["yii2", "kindeditor", "editor", "wysiwyg", "html"],
     "license": "MIT",
     "authors": [
         {
@@ -8,11 +10,31 @@
             "email": "pjkui@qq.com"
         }
     ],
-    
-    "require": {},
+    "require": {
+        "php": ">=5.6"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5 || ^8.5 || ^7.5",
+        "yiisoft/yii2": "^2.0"
+    },
     "autoload": {
         "psr-4": {
             "pjkui\\kindeditor\\": ""
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "pjkui\\kindeditor\\tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "phpunit --colors=always",
+        "lint": "find . -path ./vendor -prune -o -name '*.php' -print0 | xargs -0 -n1 php -l"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "yiisoft/yii2-composer": true
         }
     }
 }

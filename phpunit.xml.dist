@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         bootstrap="tests/bootstrap.php"
+         colors="true"
+         convertErrorsToExceptions="true"
+         convertNoticesToExceptions="true"
+         convertWarningsToExceptions="true"
+         stopOnFailure="false"
+         cacheResultFile=".phpunit.result.cache">
+    <testsuites>
+        <testsuite name="KindEditor Test Suite">
+            <directory suffix="Test.php">tests</directory>
+        </testsuite>
+    </testsuites>
+    <coverage>
+        <include>
+            <file>KindEditor.php</file>
+            <file>KindEditorAction.php</file>
+            <file>KindEditorAsset.php</file>
+        </include>
+    </coverage>
+</phpunit>
