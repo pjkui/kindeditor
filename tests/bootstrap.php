@@ -28,6 +28,9 @@ $runtime = sys_get_temp_dir() . '/kindeditor-tests-' . getmypid();
 if (!is_dir($runtime)) {
     mkdir($runtime, 0777, true);
 }
+if (!is_dir($runtime . '/assets')) {
+    mkdir($runtime . '/assets', 0777, true);
+}
 Yii::setAlias('@webroot', $runtime);
 Yii::setAlias('@web', '/');
 
@@ -43,6 +46,18 @@ new yii\web\Application([
         ],
         'urlManager' => [
             'enablePrettyUrl' => false,
+        ],
+        'assetManager' => [
+            'basePath' => $runtime . '/assets',
+            'baseUrl'  => '/assets',
+            // Stub the KindEditor bundle so asset publishing is a no-op in tests.
+            'bundles' => [
+                'pjkui\kindeditor\KindEditorAsset' => [
+                    'sourcePath' => null,
+                    'js'         => [],
+                    'css'        => [],
+                ],
+            ],
         ],
     ],
 ]);
